@@ -21,4 +21,8 @@ body {
   margin-left: -40px !important;
 }
 
+aside.sidenav {
+  width: 12vw;
+}
+
 /*# sourceMappingURL=main.css.map */
