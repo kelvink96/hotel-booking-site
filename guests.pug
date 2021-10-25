@@ -1,19 +1,28 @@
-mixin rooms
-  - var roomItems = [{"roomName":{"img":"img/hero-1.jpg","name":"deluxe presidential suite 1A","id":"#921"},"bedType":"presidential","roomFloor":"f-02","description":"presidential, jacuzzi, shower, mini-bar","status":{"name":"booked","class":"bg-danger"}},{"roomName":{"img":"img/hero-2.jpg","name":"deluxe twin rooms 18s","id":"#8162"},"bedType":"twin rooms","roomFloor":"f-03","description":"double bed, jacuzzi, shower","status":{"name":"booked","class":"bg-danger"}},{"roomName":{"img":"img/hero-3.jpg","name":"deluxe single rooms 45g","id":"#6412"},"bedType":"single","roomFloor":"f-02","description":"single bed, shower","status":{"name":"available","class":"bg-success"}},{"roomName":{"img":"img/hero-4.jpg","name":"deluxe standard rooms 8z","id":"#6429"},"bedType":"queen size","roomFloor":"f-31","description":"queen size, shower","status":{"name":"available","class":"bg-success"}},{"roomName":{"img":"img/hero-5.jpg","name":"deluxe rooms 19r","id":"#765"},"bedType":"twin rooms","roomFloor":"f-12","description":"queen size, jacuzzi, shower","status":{"name":"booked","class":"bg-danger"}},{"roomName":{"img":"img/hero-6.jpg","name":"deluxe double rooms 19r","id":"#9763"},"bedType":"twin rooms","roomFloor":"f-65","description":"queen size, jacuzzi, shower","status":{"name":"booked","class":"bg-danger"}},{"roomName":{"img":"img/hero-7.jpg","name":"deluxe single rooms 19r","id":"#756"},"bedType":"twin rooms","roomFloor":"f-46","description":"queen size, jacuzzi, shower","status":{"name":"available","class":"bg-success"}},{"roomName":{"img":"img/hero-8.jpg","name":"deluxe standard 19r","id":"#475"},"bedType":"twin rooms","roomFloor":"f-02","description":"queen size, jacuzzi, shower","status":{"name":"available","class":"bg-success"}}]
+mixin guests
+  - var guestsItems = [{"guest":{"img":"img/user-1.jpg","name":"alex","id":"#921"},"dateOrder":{"date":"12/01/2021","time":"09.49AM"},"checkIn":{"date":"12/01/2021","time":"09.49AM"},"checkOut":{"date":"12/01/2021","time":"09.49AM"},"roomType":{"name":"deluxe twin rooms","type":"twin rooms"},"status":{"name":"reserved","class":"btn-primary"}},{"guest":{"img":"img/user-2.jpg","name":"michael","id":"#81"},"dateOrder":{"date":"12/01/2021","time":"09.49AM"},"checkIn":{"date":"12/01/2021","time":"09.49AM"},"checkOut":{"date":"12/01/2021","time":"09.49AM"},"roomType":{"name":"deluxe standard rooms","type":"queen size"},"status":{"name":"pending","class":"btn-secondary"}},{"guest":{"img":"img/user-3.jpg","name":"julian","id":"#185"},"dateOrder":{"date":"12/01/2021","time":"09.49AM"},"checkIn":{"date":"12/01/2021","time":"09.49AM"},"checkOut":{"date":"12/01/2021","time":"09.49AM"},"roomType":{"name":"deluxe single room","type":"single room"},"status":{"name":"cancelled","class":"btn-danger"}},{"guest":{"img":"img/user-4.jpg","name":"charles","id":"#9751"},"dateOrder":{"date":"12/01/2021","time":"09.49AM"},"checkIn":{"date":"12/01/2021","time":"09.49AM"},"checkOut":{"date":"12/01/2021","time":"09.49AM"},"roomType":{"name":"deluxe single rooms","type":"single room"},"status":{"name":"refund","class":"btn-warning"}},{"guest":{"img":"img/user-5.jpg","name":"christina","id":"#75"},"dateOrder":{"date":"12/01/2021","time":"09.49AM"},"checkIn":{"date":"12/01/2021","time":"09.49AM"},"checkOut":{"date":"12/01/2021","time":"09.49AM"},"roomType":{"name":"deluxe standard rooms","type":"queen size"},"status":{"name":"pending","class":"btn-secondary"}},{"guest":{"img":"img/user-6.jpg","name":"jurika","id":"#580"},"dateOrder":{"date":"12/01/2021","time":"09.49AM"},"checkIn":{"date":"12/01/2021","time":"09.49AM"},"checkOut":{"date":"12/01/2021","time":"09.49AM"},"roomType":{"name":"deluxe presidential rooms","type":"presidential"},"status":{"name":"reserved","class":"btn-primary"}}]
   div
-    for room in roomItems
+    for guest in guestsItems
       tr.v-align-middle
         td
           .d-flex.align-items-center
-            img.me-3.img-cover.rounded-3(src=room.roomName.img width=120 height=80)
+            img.me-3.img-cover.rounded-3(src=guest.guest.img width=80 height=80)
             .d-flex.flex-column
-              span.me-5.text-capitalize.text-primary= room.roomName.id
-              span.me-5.text-uppercase= room.roomName.name
-        td.text-capitalize= room.bedType
-        td.text-uppercase= room.roomFloor
-        td.text-capitalize= room.description
+              span.me-5.text-capitalize.text-primary= guest.guest.id
+              span.me-5.text-uppercase= guest.guest.name
+        td.text-capitalize
+          p.mb-0= guest.dateOrder.date
+          p.mb-0= guest.dateOrder.time
+        td.text-capitalize
+          p.mb-0= guest.checkIn.date
+          p.mb-0= guest.checkIn.time
+        td.text-capitalize
+          p.mb-0= guest.checkOut.date
+          p.mb-0= guest.checkOut.time
+        td.text-capitalize
+          p.mb-0= guest.roomType.name
+          p.mb-0= guest.roomType.type
         td
-          span.rounded-3.btn.text-white.text-capitalize(class=room.status.class)= room.status.name
+          span.rounded-3.btn.text-capitalize(class=guest.status.class)= guest.status.name
         td
           .dropdown
             button.btn(type='button' data-bs-toggle='dropdown' aria-expanded='false')
@@ -82,8 +91,8 @@ html(lang='en')
           nav.navbar.navbar-expand-lg
             .container-fluid
               a.navbar-brand(href='#').d-flex.align-items-center
-                i.las.la-key.la-2x.me-2
-                span Rooms
+                i.las.la-user-alt.la-2x.me-2
+                span Guests list
               button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
                 span.navbar-toggler-icon
               #navbarSupportedContent.collapse.navbar-collapse
@@ -128,17 +137,21 @@ html(lang='en')
                     .card-body.p-1
                       ul.nav.nav-tabs(role='tablist')
                         li.nav-item(role='presentation')
-                          a#all-rooms-tab.nav-link.active(data-bs-toggle='tab' data-bs-target='#all-rooms' type='button' role='tab' aria-controls='all-rooms' aria-selected='true')
-                            | all rooms
-                            span.ms-1 (496)
+                          a#all-guests-tab.nav-link.active(data-bs-toggle='tab' data-bs-target='#all-guests' type='button' role='tab' aria-controls='all-guests' aria-selected='true')
+                            | all guests
+                            span.ms-1 (960)
                         li.nav-item(role='presentation')
-                          a#available-rooms-tab.nav-link(data-bs-toggle='tab' data-bs-target='#available-rooms' type='button' role='tab' aria-controls='available-rooms' aria-selected='false')
-                            | available rooms
-                            span.ms-1 (293)
+                          a#pending-guests-tab.nav-link(data-bs-toggle='tab' data-bs-target='#pending-guests' type='button' role='tab' aria-controls='pending-guests' aria-selected='false')
+                            | pending
                         li.nav-item(role='presentation')
-                          a#booked-rooms-tab.nav-link(data-bs-toggle='tab' data-bs-target='#booked-rooms' type='button' role='tab' aria-controls='booked-rooms' aria-selected='false')
-                            | booked rooms
-                            span.ms-1 (62)
+                          a#booked-guests-tab.nav-link(data-bs-toggle='tab' data-bs-target='#booked-guests' type='button' role='tab' aria-controls='booked-guests' aria-selected='false')
+                            | booked
+                        li.nav-item(role='presentation')
+                          a#cancelled-guests-tab.nav-link(data-bs-toggle='tab' data-bs-target='#cancelled-guests' type='button' role='tab' aria-controls='cancelled-guests' aria-selected='false')
+                            | cancelled
+                        li.nav-item(role='presentation')
+                          a#refund-guests-tab.nav-link(data-bs-toggle='tab' data-bs-target='#refund-guests' type='button' role='tab' aria-controls='refund-guests' aria-selected='false')
+                            | refund
                 .col-lg-4
                   .card
                     .card-body.p-1
@@ -150,25 +163,41 @@ html(lang='en')
                 .col-lg-2
                   .card
                     .card-body.p-1
-                      button.btn.w-100
-                        i.las.la-calendar.v-align-middle.text-primary.fs-4.me-1
-                        span check schedule
+                      .dropdown
+                        button.btn.dropdown-toggle.w-100(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                          | Export
+                        ul.dropdown-menu
+                          li
+                            a.dropdown-item(href='#')
+                              i.las.la-file-excel.me-1
+                              | Excel
+                          li
+                            a.dropdown-item(href='#')
+                              i.las.la-file-pdf.me-1
+                              | PDF
+                          li
+                            a.dropdown-item(href='#')
+                              i.las.la-print.me-1
+                              | Print
               .card.mt-3
                 .card-body
                   .tab-content
-                    #all-rooms.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='all-rooms-tab')
+                    #all-guests.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='all-guests-tab')
                       .table-responsive
                         table.table.table-hover
                           thead
                             tr.text-capitalize
-                              th room name
-                              th bed type
-                              th room floor
-                              th room description
+                              th guest
+                              th date order
+                              th check in
+                              th check out
+                              th room type
                               th status
                               th
                           tbody
-                            + rooms
-                    #available-rooms.tab-pane.fade(role='tabpanel' aria-labelledby='available-rooms-tab') ...
-                    #booked-rooms.tab-pane.fade(role='tabpanel' aria-labelledby='booked-rooms-tab') ...
+                            + guests
+                    #pending-guests.tab-pane.fade(role='tabpanel' aria-labelledby='pending-guests-tab') ...
+                    #booked-guests.tab-pane.fade(role='tabpanel' aria-labelledby='booked-guests-tab') ...
+                    #cancelled-guests.tab-pane.fade(role='tabpanel' aria-labelledby='cancelled-guests-tab') ...
+                    #refund-guests.tab-pane.fade(role='tabpanel' aria-labelledby='refund-guests-tab') ...
 
