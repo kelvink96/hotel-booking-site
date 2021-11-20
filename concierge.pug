@@ -1,0 +1,191 @@
+mixin concierge
+  - var conciergeItems = [{"user":{"img":"img/user-1.jpg","name":"Elijah Charlotte","id":"#emp-921","dateJoined":"25/01/2021"},"jobDesk":"The hotel user is the first point of contact for customers and guests entering the hotel. They are the face of the hotel’s brand, so professionalism and a friendly and approachable disposition are important to making guests feel welcome.","schedule":{"days":"Monday, Tuesday, Wednesday","times":"8.00AM - 4.00PM"},"contact":"+254-000-000-000","status":{"name":"active","class":"btn-primary"}},{"user":{"img":"img/user-2.jpg","name":"William sophia","id":"#emp-185","dateJoined":"25/01/2021"},"jobDesk":"Guests may have an issue with their room, trouble working equipment in the hotel, or have a question regarding services; the hotel user deals with these inquiries to resolve issues quickly and efficiently.","schedule":{"days":"Monday, Tuesday, Friday","times":"9.00AM - 5.00PM"},"contact":"+192-765-611-099","status":{"name":"inactive","class":"btn-secondary"}},{"user":{"img":"img/user-3.jpg","name":"James amelia","id":"#emp-9751","dateJoined":"25/01/2021"},"jobDesk":"The hotel user answers phones and responds to emails to make bookings and reservations for guests, making a note of any special requirements or requests for a particular room type or view.","schedule":{"days":"Tuesday, Sunday","times":"10.00AM - 4.00PM"},"contact":"+201-313-878-919","status":{"name":"inactive","class":"btn-secondary"}},{"user":{"img":"img/user-4.jpg","name":"Benjamin isabella","id":"#emp-75","dateJoined":"25/01/2021"},"jobDesk":"Extensive knowledge of the surrounding local area is vital for hotel users, as they often provide informed recommendations to guests about dining options and nearby attractions.","schedule":{"days":"Monday, Wednesday, Friday","times":"7.00AM - 3.00PM"},"contact":"+251-212-434-652","status":{"name":"active","class":"btn-primary"}},{"user":{"img":"img/user-5.jpg","name":"Liam Olivia","id":"#emp-580","dateJoined":"25/01/2021"},"jobDesk":"The hotel user works with external companies to arrange excursions to surrounding attractions, book taxis and other transport, and arrange events on behalf of guests.","schedule":{"days":"Tuesday, Wednesday, Saturday","times":"9.00AM - 7.00PM"},"contact":"+253-111-11-222","status":{"name":"inactive","class":"btn-secondary"}},{"user":{"img":"img/user-6.jpg","name":"Alexander Harper","id":"#emp-81","dateJoined":"25/01/2021"},"jobDesk":"Guests may have an issue with their room, trouble working equipment in the hotel, or have a question regarding services; the hotel user deals with these inquiries to resolve issues quickly and efficiently.    ","schedule":{"days":"Saturday, Sunday","times":"9.00AM - 10.00PM"},"contact":"+253-111-11-222","status":{"name":"active","class":"btn-primary"}}]
+  div
+    for concierge in conciergeItems
+      tr.v-align-middle
+        td
+          .d-flex.align-items-center
+            img.me-3.img-cover.rounded-3(src=concierge.user.img width=50 height=50)
+            .d-flex.flex-column
+              span.me-5.text-uppercase.text-primary.small= concierge.user.id
+              span.me-5.text-capitalize.fw-normal= concierge.user.name
+        td.text-capitalize
+          p.mb-0.small= concierge.jobDesk
+        td.text-capitalize
+          p.mb-0.fw-bold= concierge.schedule.days
+          p.mb-0= concierge.schedule.times
+        td.text-capitalize
+          p.mb-0= concierge.contact
+        td
+          span.rounded-3.btn.text-capitalize(class=concierge.status.class)= concierge.status.name
+        td
+          .dropdown
+            button.btn(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+              i.las.la-ellipsis-h
+            ul.dropdown-menu(aria-labelledby='dropdownMenuButton1')
+              li
+                a.dropdown-item(href='#') Action
+              li
+                a.dropdown-item(href='#') Another action
+              li
+                a.dropdown-item(href='#') Something else here
+
+doctype html
+html(lang='en')
+  head
+    title hotels.com
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    // Local Files
+    link(rel='stylesheet' href='vendors/bootstrap-5.1.3-dist/css/bootstrap.min.css')
+    script(src='vendors/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js')
+    // jQuery
+    script(src='vendors/jquery-3.6.0/jquery-3.6.0.min.js')
+    // chart
+    script(src='vendors/chart.js-3.5.0/chart.min.js')
+    script(src='js/main.js')
+    script(src='js/dashboard.js')
+    // Fonts
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap' rel='stylesheet')
+    // Line awesome
+    link(rel='stylesheet' href='vendors/line-awesome-1.3.0/css/line-awesome.min.css')
+    // Flags icons
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css')
+    link(rel='stylesheet' href='css/main.css')
+  body
+    .d-flex.h-100
+      aside.sidenav.shadow-sm
+        .p-0
+          .brand-name.text-center.mt-3.mb-2
+            .d-flex.justify-content-center.align-items-center
+              img.me-1(src='img/logo.png' alt='' height='50')
+          .list-group.list-group-flush
+            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.border-0.text-capitalize.py-3(href='')
+              i.las.la-columns.la-2x
+              span dashboard
+            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.border-0.text-capitalize.py-3(href='')
+              i.las.la-key.la-2x
+              span rooms
+            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.border-0.text-capitalize.py-3(href='')
+              i.las.la-calendar-check.la-2x
+              span bookings
+            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.border-0.text-capitalize.py-3(href='')
+              i.las.la-user-alt.la-2x
+              span guests
+            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.border-0.text-capitalize.py-3(href='')
+              i.las.la-user-tie.la-2x
+              span concierge
+            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.border-0.text-capitalize.py-3(href='')
+              i.las.la-cog.la-2x
+              span settings
+          .position-absolute.bottom-0.ps-3.text-center
+            h6.mb-0.text-capitalize hotel.com admin
+            p.mb-0 &copy; All rights reserved
+      .container-fluid
+        header
+          nav.navbar.navbar-expand-lg
+            .container-fluid
+              a.navbar-brand(href='#').d-flex.align-items-center
+                i.las.la-user-tie.la-2x.me-2
+                span Concierge
+              button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+              #navbarSupportedContent.collapse.navbar-collapse
+                form.ms-auto.d-flex.w-50
+                  .input-group
+                    input.form-control(type='search' placeholder='search location, hotel name, facilities' aria-label='Search')
+                    span.input-group-text.bg-transparent
+                      i.las.la-search
+                ul.navbar-nav.ms-auto.align-items-center
+                  li.nav-item
+                    a.nav-link.fs-4(href='#')
+                      i.las.la-bell
+                  li.nav-item
+                    a.nav-link.fs-4(href='#')
+                      i.las.la-envelope
+                  .dropdown
+                    button.btn#account-dropdown(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      .d-flex.align-items-center.gap-2
+                        img.img-cover.rounded-circle.border(src='img/icons8_account_120px.png' width='40' height='40')
+                        .text-start
+                          p.mb-0.text-capitalize john doe
+                          p.small.mb-0 guest
+                        label
+                          i.las.la-angle-down
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link
+        main
+          .container.py-3
+            .section
+              .row.align-items-center
+                .col-lg-6
+                  .card
+                    .card-body.p-1
+                      ul.nav.nav-tabs(role='tablist')
+                        li.nav-item(role='presentation')
+                          a#all-guests-tab.nav-link.active(data-bs-toggle='tab' data-bs-target='#all-guests' type='button' role='tab' aria-controls='all-guests' aria-selected='true')
+                            | all employees
+                            span.ms-1 (102)
+                        li.nav-item(role='presentation')
+                          a#pending-guests-tab.nav-link(data-bs-toggle='tab' data-bs-target='#pending-guests' type='button' role='tab' aria-controls='pending-guests' aria-selected='false')
+                            | active employees
+                        li.nav-item(role='presentation')
+                          a#booked-guests-tab.nav-link(data-bs-toggle='tab' data-bs-target='#booked-guests' type='button' role='tab' aria-controls='booked-guests' aria-selected='false')
+                            | inactive employees
+                .col-lg-4
+                  .card
+                    .card-body.p-1
+                      form.ms-auto.d-flex
+                        .input-group
+                          input.form-control(type='search' placeholder='search here...' aria-label='Search')
+                          span.input-group-text.bg-transparent
+                            i.las.la-search
+                .col-lg-2
+                  .card
+                    .card-body.p-1
+                      .dropdown
+                        button.btn.dropdown-toggle.w-100(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                          | Export
+                        ul.dropdown-menu
+                          li
+                            a.dropdown-item(href='#')
+                              i.las.la-file-excel.me-1
+                              | Excel
+                          li
+                            a.dropdown-item(href='#')
+                              i.las.la-file-pdf.me-1
+                              | PDF
+                          li
+                            a.dropdown-item(href='#')
+                              i.las.la-print.me-1
+                              | Print
+              .card.mt-3
+                .card-body
+                  .tab-content
+                    #all-guests.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='all-guests-tab')
+                      .table-responsive
+                        table.table.table-hover
+                          thead
+                            tr.text-capitalize
+                              th.col employee name
+                              th.col job desk
+                              th.col-2 schedule
+                              th.col-2 contact
+                              th.col status
+                              th
+                          tbody
+                            + concierge
+                    #pending-guests.tab-pane.fade(role='tabpanel' aria-labelledby='pending-guests-tab') ...
+                    #booked-guests.tab-pane.fade(role='tabpanel' aria-labelledby='booked-guests-tab') ...
+                    #cancelled-guests.tab-pane.fade(role='tabpanel' aria-labelledby='cancelled-guests-tab') ...
+                    #refund-guests.tab-pane.fade(role='tabpanel' aria-labelledby='refund-guests-tab') ...
