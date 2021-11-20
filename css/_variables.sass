@@ -1,3 +1,5 @@
+@import "colors"
+
 .img-contain
   object-fit: contain
 
@@ -12,3 +14,55 @@ body
 
 .ml-n-40
   margin-left: -40px !important
+
+textarea:focus,
+input.form-control:focus,
+.form-control:focus,
+.form-select:focus,
+.uneditable-input:focus
+  border-color: $color-cyan !important
+  outline: 0
+  box-shadow: 0 0 0 0.25rem rgb(0 150 141 / 25%) !important
+
+.text-primary
+  color: $color-cyan !important
+
+.text-secondary
+  color: $color-med-orange !important
+
+.bg-primary
+  background-color: $color-cyan !important
+
+.bg-secondary
+  background-color: $color-med-orange !important
+
+@mixin onHover($bgColor, $op)
+  background-color: $bgColor
+  opacity: $op
+
+.btn
+  text-transform: capitalize
+
+.btn-primary
+  background-color: $color-cyan
+  border-color: $color-cyan
+  color: white
+
+  &:hover,
+  &:focus
+    box-shadow: 0 0 0 0.25rem rgb(0 150 141 / 25%) !important
+    border-color: $color-cyan
+    color: white
+    @include onHover($color-cyan, .9)
+
+.btn-secondary
+  background-color: $color-med-orange
+  border-color: $color-med-orange
+  color: black
+
+  &:hover,
+  &:focus
+    box-shadow: 0 0 0 0.25rem rgb(238 167 55 / 25%) !important
+    border-color: $color-med-orange
+    color: black
+    @include onHover($color-med-orange, .9)
