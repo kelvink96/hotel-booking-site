@@ -41,7 +41,7 @@ html(lang='en')
                 a.nav-link.rounded-3(href='#') contact
             ul.navbar-nav.ms-auto
               li.nav-item
-                a.btn.btn-primary(href='#') sign in
+                a.btn.btn-primary(href='dashboard.html') sign in
     main
       .container.py-5
         .hero-section.section.py-3
@@ -279,44 +279,39 @@ html(lang='en')
         .section.py-4
           .card.bg-light
             .card-body
-              h3.card-title Subscribe to our newsletters to get latest updates and offers
+              h5.card-title Subscribe to our newsletters to get latest updates and offers
               p.card-text Prices drop the moment you sign up!
               .d-flex
                 .col-3.me-2
                   input.form-control(type='text' placeholder="enter your email")
                 div
                   button.btn.btn-primary(type='button') sign me up
-    footer
+    footer.bg-light
       .py-4
         .container
           .row.row-cols-5.py-3
             .col
               a.d-flex.align-items-center.mb-3.text-decoration-none(href='/')
-                i.fab.fa-bootstrap.fa-3x.me-3
-                span.fs-5.text-white.text-uppercase kingbet
+                img(src='img/logo.svg' width='30' height='30').me-2.img-cover
+                span.fs-5.text-primary.fw-bold Hotels.com
               p © 2021 Copyright Hotels.com. All rights reserved.
             .col
               h5.text-capitalize company
               ul.nav.flex-column
                 li.nav-item.mb-2
                   a.nav-link.p-0(href='#')
-                    i.fab.fa-facebook.fa-fw.me-2
                     span.text-capitalize about us
                 li.nav-item.mb-2
                   a.nav-link.p-0(href='#')
-                    i.fab.fa-twitter.fa-fw.me-2
                     span.text-capitalize careers
                 li.nav-item.mb-2
                   a.nav-link.p-0(href='#')
-                    i.fab.fa-instagram.fa-fw.me-2
                     span.text-capitalize mobile
                 li.nav-item.mb-2
                   a.nav-link.p-0(href='#')
-                    i.fab.fa-youtube.fa-fw.me-2
                     span.text-capitalize blog
                 li.nav-item.mb-2
                   a.nav-link.p-0(href='#')
-                    i.fab.fa-youtube.fa-fw.me-2
                     span.text-capitalize how we work
             .col
               h5.text-capitalize contact
@@ -400,10 +395,10 @@ html(lang='en')
               i.lab.la-youtube.me-2
               span youtube
             a(href='').btn.btn-secondary
-              i.lab.la-linkedin
+              i.lab.la-linkedin.me-2
               span linkedIn
             a(href='').btn.btn-secondary
-              i.lab.la-twitch
+              i.lab.la-twitch.me-2
               span twitch
 
 

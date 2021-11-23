@@ -53,6 +53,9 @@ input.form-control:focus,
 .btn {
   text-transform: capitalize;
 }
+.btn:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0, 150, 141, 0.25) !important;
+}
 
 .btn-primary {
   background-color: #00968D;
