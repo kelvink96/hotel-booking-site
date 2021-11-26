@@ -1,6 +1,9 @@
 /* Color Theme Swatches in Hex */
 /* Color Theme Swatches in RGBA */
 /* Color Theme Swatches in HSLA */
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in RGBA */
+/* Color Theme Swatches in HSLA */
 .img-contain {
   object-fit: contain;
 }
@@ -21,8 +24,114 @@ body {
   margin-left: -40px !important;
 }
 
+textarea:focus,
+input.form-control:focus,
+.form-control:focus,
+.form-select:focus,
+.uneditable-input:focus {
+  border-color: #00968D !important;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(0, 150, 141, 0.25) !important;
+}
+
+.text-primary, footer .nav-link, nav.navbar .nav-link:not(.btn), nav.navbar .navbar-brand {
+  color: #00968D !important;
+}
+
+.text-secondary {
+  color: #EEA737 !important;
+}
+
+.bg-primary {
+  background-color: #00968D !important;
+}
+
+.bg-secondary {
+  background-color: #EEA737 !important;
+}
+
+.btn {
+  text-transform: capitalize;
+}
+.btn:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0, 150, 141, 0.25) !important;
+}
+
+.btn-primary {
+  background-color: #00968D;
+  border-color: #00968D;
+  color: white;
+}
+.btn-primary:hover, .btn-primary:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0, 150, 141, 0.25) !important;
+  border-color: #00968D;
+  color: white;
+  background-color: #00968D;
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background-color: #EEA737;
+  border-color: #EEA737;
+  color: black;
+}
+.btn-secondary:hover, .btn-secondary:focus {
+  box-shadow: 0 0 0 0.25rem rgba(238, 167, 55, 0.25) !important;
+  border-color: #EEA737;
+  color: black;
+  background-color: #EEA737;
+  opacity: 0.9;
+}
+
+.nav.nav-tabs {
+  border-color: transparent;
+}
+.nav.nav-tabs .nav-item .nav-link {
+  border-color: transparent;
+}
+.nav.nav-tabs .nav-item .active {
+  border-bottom: 1.5px solid #00968D;
+  font-weight: bold;
+  background-color: transparent;
+}
+
 aside.sidenav {
   width: 12vw;
+}
+aside.sidenav .list-group-item-action {
+  border: 1.5px solid transparent !important;
+}
+aside.sidenav .list-group-item-action:hover, aside.sidenav .list-group-item-action:focus {
+  background-color: rgba(165, 213, 216, 0.8) !important;
+  color: white !important;
+  transition: all ease-in-out 150ms;
+}
+aside.sidenav .list-group-item-action.active {
+  background-color: rgba(165, 213, 216, 0.8) !important;
+  color: white !important;
+  border: 1.5px solid #00968D !important;
+  transition: all ease-in-out 150ms;
+}
+
+nav.navbar .navbar-brand {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+nav.navbar .nav-link:not(.btn) {
+  text-transform: capitalize;
+  margin: 0 0.1rem;
+}
+nav.navbar .nav-link:not(.btn):hover, nav.navbar .nav-link:not(.btn):focus {
+  background-color: #f8f9fa;
+}
+
+main {
+  margin-top: 50px;
+}
+
+footer .nav-link {
+  text-transform: capitalize;
+  margin: 0 0.1rem;
 }
 
 /*# sourceMappingURL=main.css.map */

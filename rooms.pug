@@ -1,0 +1,180 @@
+mixin rooms
+  - var roomItems = [{"roomName":{"img":"img/hero-1.jpg","name":"deluxe presidential suite 1A","id":"#921"},"bedType":"presidential","roomFloor":"f-02","description":"presidential, jacuzzi, shower, mini-bar","status":{"name":"booked","class":"bg-danger"}},{"roomName":{"img":"img/hero-2.jpg","name":"deluxe twin rooms 18s","id":"#8162"},"bedType":"twin rooms","roomFloor":"f-03","description":"double bed, jacuzzi, shower","status":{"name":"booked","class":"bg-danger"}},{"roomName":{"img":"img/hero-3.jpg","name":"deluxe single rooms 45g","id":"#6412"},"bedType":"single","roomFloor":"f-02","description":"single bed, shower","status":{"name":"available","class":"bg-success"}},{"roomName":{"img":"img/hero-4.jpg","name":"deluxe standard rooms 8z","id":"#6429"},"bedType":"queen size","roomFloor":"f-31","description":"queen size, shower","status":{"name":"available","class":"bg-success"}},{"roomName":{"img":"img/hero-5.jpg","name":"deluxe rooms 19r","id":"#765"},"bedType":"twin rooms","roomFloor":"f-12","description":"queen size, jacuzzi, shower","status":{"name":"booked","class":"bg-danger"}},{"roomName":{"img":"img/hero-6.jpg","name":"deluxe double rooms 19r","id":"#9763"},"bedType":"twin rooms","roomFloor":"f-65","description":"queen size, jacuzzi, shower","status":{"name":"booked","class":"bg-danger"}},{"roomName":{"img":"img/hero-7.jpg","name":"deluxe single rooms 19r","id":"#756"},"bedType":"twin rooms","roomFloor":"f-46","description":"queen size, jacuzzi, shower","status":{"name":"available","class":"bg-success"}},{"roomName":{"img":"img/hero-8.jpg","name":"deluxe standard 19r","id":"#475"},"bedType":"twin rooms","roomFloor":"f-02","description":"queen size, jacuzzi, shower","status":{"name":"available","class":"bg-success"}}]
+  div
+    for room in roomItems
+      tr.v-align-middle
+        td
+          .d-flex.align-items-center
+            img.me-3.img-cover.rounded-3(src=room.roomName.img width=120 height=80)
+            .d-flex.flex-column
+              span.me-5.text-capitalize.text-primary= room.roomName.id
+              span.me-5.text-uppercase= room.roomName.name
+        td.text-capitalize= room.bedType
+        td.text-uppercase= room.roomFloor
+        td.text-capitalize= room.description
+        td
+          span.rounded-3.btn.text-white.text-capitalize(class=room.status.class)= room.status.name
+        td
+          .dropdown
+            button.btn(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+              i.las.la-ellipsis-h
+            ul.dropdown-menu(aria-labelledby='dropdownMenuButton1')
+              li
+                a.dropdown-item(href='#') Action
+              li
+                a.dropdown-item(href='#') Another action
+              li
+                a.dropdown-item(href='#') Something else here
+
+doctype html
+html(lang='en')
+  head
+    title hotels.com
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    // Local Files
+    link(rel='stylesheet' href='vendors/bootstrap-5.1.3-dist/css/bootstrap.min.css')
+    script(src='vendors/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js')
+    // jQuery
+    script(src='vendors/jquery-3.6.0/jquery-3.6.0.min.js')
+    // chart
+    script(src='vendors/chart.js-3.5.0/chart.min.js')
+    script(src='js/main.js')
+    script(src='js/dashboard.js')
+    // Fonts
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap' rel='stylesheet')
+    // Line awesome
+    link(rel='stylesheet' href='vendors/line-awesome-1.3.0/css/line-awesome.min.css')
+    // Flags icons
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css')
+    link(rel='stylesheet' href='css/main.css')
+  body
+    .d-flex.h-100
+      aside.sidenav.bg-primary
+        .p-0
+          .brand-name.text-center.mt-3.mb-2
+            .d-flex.justify-content-center.align-items-center
+              img.me-1(src='img/logo.png' alt='' height='50')
+          .list-group.list-group-flush
+            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.text-capitalize.py-3.bg-transparent.text-white(href='dashboard.html')
+              i.las.la-columns.la-2x
+              span dashboard
+            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.text-capitalize.py-3.bg-transparent.text-white.active(href='rooms.html')
+              i.las.la-key.la-2x
+              span rooms
+            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.text-capitalize.py-3.bg-transparent.text-white(href='#')
+              i.las.la-calendar-check.la-2x
+              span bookings
+            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.text-capitalize.py-3.bg-transparent.text-white(href='guests.html')
+              i.las.la-user-alt.la-2x
+              span guests
+            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.text-capitalize.py-3.bg-transparent.text-white(href='concierge.html')
+              i.las.la-user-tie.la-2x
+              span concierge
+            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.text-capitalize.py-3.bg-transparent.text-white(href='#')
+              i.las.la-cog.la-2x
+              span settings
+      .container-fluid.px-0.bg-light
+        header
+          nav.navbar.navbar-expand-lg.bg-white.shadow-sm
+            .container-fluid
+              a.navbar-brand(href='#').d-flex.align-items-center
+                i.las.la-key.la-2x.me-2
+                span Rooms
+              button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+              #navbarSupportedContent.collapse.navbar-collapse
+                form.ms-auto.d-flex.w-50
+                  .input-group
+                    input.form-control(type='search' placeholder='search location, hotel name, facilities' aria-label='Search')
+                    span.input-group-text.bg-transparent
+                      i.las.la-search
+                ul.navbar-nav.ms-auto.align-items-center
+                  li.nav-item.me-2
+                    a.nav-link.fs-4.py-0.position-relative(href='#')
+                      i.las.la-bell
+                      small.position-absolute.top-0.start-100.translate-middle.p-1.bg-secondary.border.border-light.rounded-circle
+                  li.nav-item.me-2
+                    a.nav-link.fs-4.py-0.position-relative(href='#')
+                      i.las.la-envelope
+                      small.position-absolute.top-0.start-100.translate-middle.p-1.bg-secondary.border.border-light.rounded-circle
+                  .dropdown
+                    button.btn#account-dropdown(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      .d-flex.align-items-center.gap-2
+                        img.img-cover.rounded-circle.border(src='img/icons8_account_120px.png' width='40' height='40')
+                        .text-start
+                          p.mb-0.text-capitalize john doe
+                          p.small.mb-0 guest
+                        label
+                          i.las.la-angle-down
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#')
+                          i.las.la-user-circle.me-1
+                          | My Account
+                      li
+                        a.dropdown-item(href='#')
+                          i.las.la-cog.me-1
+                          | Settings
+                      li
+                        a.dropdown-item(href='#')
+                          i.las.la-question-circle
+                          | Support
+                      li
+                        a.dropdown-item.text-danger(href='#')
+                          i.las.la-door-open
+                          | Logout
+        main.mt-0.px-2
+          .container-fluid.py-3
+            .section
+              .row.align-items-center
+                .col-lg-6
+                  .card.border-0.bg-transparent
+                    .card-body.p-0
+                      ul.nav.nav-tabs(role='tablist')
+                        li.nav-item(role='presentation')
+                          a#all-rooms-tab.nav-link.text-capitalize.text-primary.active(data-bs-toggle='tab' data-bs-target='#all-rooms' type='button' role='tab' aria-controls='all-rooms' aria-selected='true')
+                            | all rooms
+                            span.ms-1 (496)
+                        li.nav-item(role='presentation')
+                          a#available-rooms-tab.nav-link.text-capitalize.text-primary(data-bs-toggle='tab' data-bs-target='#all-rooms' type='button' role='tab' aria-controls='all-rooms' aria-selected='false')
+                            | available rooms
+                            span.ms-1 (293)
+                        li.nav-item(role='presentation')
+                          a#booked-rooms-tab.nav-link.text-capitalize.text-primary(data-bs-toggle='tab' data-bs-target='#all-rooms' type='button' role='tab' aria-controls='all-rooms' aria-selected='false')
+                            | booked rooms
+                            span.ms-1 (62)
+                .col-lg-4
+                  .card.border-0
+                    .card-body.p-0
+                      form.ms-auto.d-flex
+                        .input-group.border-0
+                          input.form-control(type='search' placeholder='search location, hotel name, facilities' aria-label='Search')
+                          span.input-group-text.bg-transparent
+                            i.las.la-search
+                .col-lg-2
+                  .card.border-0
+                    .card-body.p-0
+                      button.btn.btn-primary.w-100
+                        i.las.la-calendar.v-align-middle.fs-4.me-1
+                        span check schedule
+              .card.mt-3.border-0.shadow-sm
+                .card-body
+                  .tab-content
+                    #all-rooms.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='all-rooms-tab')
+                      .table-responsive
+                        table.table.table-hover
+                          thead
+                            tr.text-capitalize
+                              th room name
+                              th bed type
+                              th room floor
+                              th room description
+                              th status
+                              th
+                          tbody
+                            + rooms
+                    #available-rooms.tab-pane.fade(role='tabpanel' aria-labelledby='available-rooms-tab') ...
+                    #booked-rooms.tab-pane.fade(role='tabpanel' aria-labelledby='booked-rooms-tab') ...
+

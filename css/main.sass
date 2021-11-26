@@ -3,3 +3,43 @@
 
 aside.sidenav
   width: 12vw
+
+  .list-group-item-action
+    border: 1.5px solid transparent !important
+
+    &:hover,
+    &:focus
+      background-color: $color-light-blue !important
+      color: white !important
+      @include transition
+
+    &.active
+      background-color: $color-light-blue !important
+      color: white !important
+      border: 1.5px solid $color-cyan !important
+      @include transition
+
+nav.navbar
+  .navbar-brand
+    text-transform: uppercase
+    font-weight: bold
+    @extend .text-primary
+
+  .nav-link:not(.btn)
+    text-transform: capitalize
+    @extend .text-primary
+    margin: 0 .1rem
+
+    &:hover,
+    &:focus
+      background-color: $color-bs-light
+
+main
+  margin-top: 50px
+
+footer
+  .nav-link
+    text-transform: capitalize
+    @extend .text-primary
+    margin: 0 .1rem
+
