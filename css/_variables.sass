@@ -40,6 +40,9 @@ input.form-control:focus,
   background-color: $bgColor
   opacity: $op
 
+@mixin transition
+  transition: all ease-in-out 150ms
+
 .btn
   text-transform: capitalize
 
@@ -69,3 +72,15 @@ input.form-control:focus,
     border-color: $color-med-orange
     color: black
     @include onHover($color-med-orange, .9)
+
+.nav.nav-tabs
+  border-color: transparent
+
+  .nav-item
+    .nav-link
+      border-color: transparent
+
+    .active
+      border-bottom: 1.5px solid $color-cyan
+      font-weight: bold
+      background-color: transparent

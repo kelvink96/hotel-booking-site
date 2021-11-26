@@ -23,33 +23,33 @@ html(lang='en')
     link(rel='stylesheet' href='css/main.css')
   body
     .d-flex.h-100
-      aside.sidenav.bg-primary.shadow-sm
+      aside.sidenav.bg-primary
         .p-0
           .brand-name.text-center.mt-3.mb-2
             .d-flex.justify-content-center.align-items-center
               img.me-1(src='img/logo.png' alt='' height='50')
           .list-group.list-group-flush
-            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.border-0.text-capitalize.py-3.bg-transparent.text-white(href='#')
+            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.text-capitalize.py-3.bg-transparent.text-white.active(href='dashboard.html')
               i.las.la-columns.la-2x
               span dashboard
-            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.border-0.text-capitalize.py-3.bg-transparent.text-white(href='rooms.html')
+            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.text-capitalize.py-3.bg-transparent.text-white(href='rooms.html')
               i.las.la-key.la-2x
               span rooms
-            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.border-0.text-capitalize.py-3.bg-transparent.text-white(href='bookings.html')
+            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.text-capitalize.py-3.bg-transparent.text-white(href='bookings.html')
               i.las.la-calendar-check.la-2x
               span bookings
-            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.border-0.text-capitalize.py-3.bg-transparent.text-white(href='guests.html')
+            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.text-capitalize.py-3.bg-transparent.text-white(href='guests.html')
               i.las.la-user-alt.la-2x
               span guests
-            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.border-0.text-capitalize.py-3.bg-transparent.text-white(href='concierge.html')
+            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.text-capitalize.py-3.bg-transparent.text-white(href='concierge.html')
               i.las.la-user-tie.la-2x
               span concierge
-            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.border-0.text-capitalize.py-3.bg-transparent.text-white(href='')
+            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.text-capitalize.py-3.bg-transparent.text-white(href='')
               i.las.la-cog.la-2x
               span settings
-      .container-fluid.px-3.bg-light
+      .container-fluid.px-0.bg-light
         header
-          nav.navbar.navbar-expand-lg
+          nav.navbar.navbar-expand-lg.bg-white.shadow-sm
             .container-fluid
               a.navbar-brand(href='#').d-flex.align-items-center
                 i.las.la-columns.la-2x.me-2
@@ -63,12 +63,14 @@ html(lang='en')
                     span.input-group-text.bg-transparent
                       i.las.la-search
                 ul.navbar-nav.ms-auto.align-items-center
-                  li.nav-item
-                    a.nav-link.fs-4(href='#')
+                  li.nav-item.me-2
+                    a.nav-link.fs-4.py-0.position-relative(href='#')
                       i.las.la-bell
-                  li.nav-item
-                    a.nav-link.fs-4(href='#')
+                      small.position-absolute.top-0.start-100.translate-middle.p-1.bg-secondary.border.border-light.rounded-circle
+                  li.nav-item.me-2
+                    a.nav-link.fs-4.py-0.position-relative(href='#')
                       i.las.la-envelope
+                      small.position-absolute.top-0.start-100.translate-middle.p-1.bg-secondary.border.border-light.rounded-circle
                   .dropdown
                     button.btn#account-dropdown(type='button' data-bs-toggle='dropdown' aria-expanded='false')
                       .d-flex.align-items-center.gap-2
@@ -80,21 +82,27 @@ html(lang='en')
                           i.las.la-angle-down
                     ul.dropdown-menu
                       li
-                        a.dropdown-item(href='#') Action
+                        a.dropdown-item(href='#')
+                          i.las.la-user-circle.me-1
+                          | My Account
                       li
-                        a.dropdown-item(href='#') Another action
+                        a.dropdown-item(href='#')
+                          i.las.la-cog.me-1
+                          | Settings
                       li
-                        a.dropdown-item(href='#') Something else here
+                        a.dropdown-item(href='#')
+                          i.las.la-question-circle
+                          | Support
                       li
-                        hr.dropdown-divider
-                      li
-                        a.dropdown-item(href='#') Separated link
-        main.mt-0
+                        a.dropdown-item.text-danger(href='#')
+                          i.las.la-door-open
+                          | Logout
+        main.mt-0.px-2
           .container-fluid.py-3
             .section
               .row.row-cols-lg-4
                 .col
-                  .card.mb-3
+                  .card.mb-3.shadow-sm.border-0
                     .card-body
                       .row.align-items-center
                         .col-6
@@ -104,17 +112,17 @@ html(lang='en')
                         .col-4.ms-auto
                           canvas#new-bookings-chart
                 .col
-                  .card.mb-3
+                  .card.mb-3.shadow-sm.border-0
                     .card-body
                       .row.align-items-center
                         .col-6
                           .d-flex.flex-column
                             p.mb-0.text-capitalize scheduled rooms
-                            h4 7312
+                            h4 732
                         .col-4.ms-auto
                           canvas#scheduled-rooms-chart
                 .col
-                  .card.mb-3
+                  .card.mb-3.shadow-sm.border-0
                     .card-body
                       .row.align-items-center
                         .col-6
@@ -124,7 +132,7 @@ html(lang='en')
                         .col-4.ms-auto
                           img(src='img/check-in-icon.png').img-fluid
                 .col
-                  .card.mb-3
+                  .card.mb-3.shadow-sm.border-0
                     .card-body
                       .row.align-items-center
                         .col-6
@@ -135,7 +143,7 @@ html(lang='en')
                           img(src='img/check-out-icon.png').img-fluid
               .row
                 .col-lg-9
-                  .card.mb-3
+                  .card.mb-3.shadow-sm.border-0
                     .card-body
                       .row
                         .col-md-6
@@ -154,7 +162,7 @@ html(lang='en')
                                 .progress-bar.bg-primary(role='progressbar' style='width: 85%')
                             h5.mb-0 521
                           p.small total 600 rooms
-                  .card
+                  .card.shadow-sm.border-0
                     .card-header.bg-transparent.border-0
                       .d-flex.my-2.align-items-center.justify-content-between
                         h5.mb-0.text-capitalize reservations statistics
@@ -174,7 +182,7 @@ html(lang='en')
                     .card-body
                       canvas#reservations-stats-chart
                 .col-lg-3
-                  .card.mb-3
+                  .card.mb-3.shadow-sm.border-0
                     .card-header.bg-transparent.border-0
                       .d-flex.align-items-center.justify-content-between
                         h5.mb-0.text-capitalize recent bookings
@@ -220,13 +228,19 @@ html(lang='en')
                                   i.las.la-users.me-1
                                   span 3-5 people
                             img.rounded-circle.border(src='img/icons8_account_120px.png' width='50' height='50')
-                  .card.mb-3
+                  .card.mb-3.shadow-sm.border-0
                     .card-header.bg-transparent.border-0
                       .d-flex.align-items-center.justify-content-between
                         h5.mb-0.text-capitalize guest list
                         a(href='#').btn.text-primary more
                     .card-body.p-0
                       .list-group.list-group-flush
+                        a.list-group-item.list-group-item-action(href='#')
+                          .d-flex.w-100.justify-content-between.align-items-center
+                            img.rounded-circle.border(src='img/icons8_account_120px.png' width='50' height='50')
+                            .flex-grow-1.ms-2
+                              p.text-primary.text-capitalize.mb-0 #73199
+                              h6.my-2.text-capitalize john doe
                         a.list-group-item.list-group-item-action(href='#')
                           .d-flex.w-100.justify-content-between.align-items-center
                             img.rounded-circle.border(src='img/icons8_account_120px.png' width='50' height='50')
