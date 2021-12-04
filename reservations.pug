@@ -25,9 +25,43 @@ html(lang='en')
           a.navbar-brand(href='/').d-flex.align-items-center
             img(src='img/logo.svg' height='50' width='50').me-2
             span Hotels.com
-          button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-            span.navbar-toggler-icon
-          #navbarSupportedContent.collapse.navbar-collapse
+          .d-flex.d-lg-none.align-items-center.justify-content-evenly.ms-auto
+            .nav-item
+              a.nav-link.fs-5.py-0.px-2.position-relative(href='#')
+                i.las.la-search
+            .nav-item
+              a.nav-link.fs-5.py-0.px-2.position-relative(href='#')
+                i.las.la-bell
+            .nav-item
+              a.nav-link.fs-5.py-0.px-2.position-relative(href='#')
+                i.las.la-envelope
+            .dropstart
+              button.btn#account-dropdown(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                .d-flex.align-items-center.gap-2
+                  img.img-cover.rounded-circle.border(src='img/icons8_account_120px.png' width='40' height='40')
+              ul.dropdown-menu
+                li
+                  .dropdown-item
+                    p.mb-0.text-capitalize
+                      span john doe
+                      span.small.mb-0.badge.bg-primary.ms-2 guest
+                li
+                  a.dropdown-item(href='#')
+                    i.las.la-user-circle.me-1
+                    | My Account
+                li
+                  a.dropdown-item(href='#')
+                    i.las.la-cog.me-1
+                    | Settings
+                li
+                  a.dropdown-item(href='#')
+                    i.las.la-question-circle
+                    | Support
+                li
+                  a.dropdown-item.text-danger(href='#')
+                    i.las.la-door-open
+                    | Logout
+          .collapse.navbar-collapse
             form.ms-auto.d-flex.w-50
               .input-group
                 input.form-control(type='search' placeholder='search location, hotel name, facilities' aria-label='Search')
@@ -71,7 +105,7 @@ html(lang='en')
     main.pt-3.bg-light
       .container-fluid.px-4.mt-4
         .row
-          .col-3
+          .col-12.col-lg-3.mb-3.mb-lg-0
             .card.border-0.shadow-sm
               .card-header.bg-transparent.border-0
                 h3.my-1.text-capitalize filter search
@@ -125,20 +159,20 @@ html(lang='en')
                 button.btn.btn-primary.w-100
                   i.las.la-search.me-2
                   span Search
-          .col-9.pb-3
+          .col-12.col-lg-9.pb-3
             #loader-wrapper.card.border-0.shadow-sm.placeholder-glow
               .card-header.bg-transparent.border-0
-                h3.text-capitalize.my-1 available hotels & resorts
-                .d-flex.align-items-center.justify-content-between.mb-3
-                  p.placeholder.mb-0.rounded-3 150+ hotels & resorts available
-                  .d-flex.align-items-center
+                h3.text-capitalize.my-2.my-md-1 available hotels & resorts
+                .d-flex.align-items-center.justify-content-between.mb-3.flex-wrap.flex-md-nowrap
+                  p.placeholder.mb-1.mb-lg-0.rounded-3 150+ hotels & resorts available
+                  .d-flex.align-items-center.mt-2.mt-lg-0.justify-content-between.justify-content-lg-start
                     p.mb-0.placeholder.rounded-3
                       i.las.la-sort-amount-down.fs-5.me-1
                       span.me-1 Sort by :
                     p.mb-0.placeholder.ms-2.rounded-3
                       | relevance
                       i.las.la-angle-down.ms-2
-                .d-flex.gap-3
+                .d-flex.gap-3.flex-wrap.flex-md-nowrap
                   p.btn.placeholder.rounded-3 all rooms
                   p.btn.placeholder.rounded-3 deluxe
                   p.btn.placeholder.rounded-3 standard
@@ -150,55 +184,65 @@ html(lang='en')
                 .loader-wrapper
                   .list-group.list-group-flush
                     .list-group-item.border-0
-                      .d-flex.w-100.justify-content-between.align-items-center.py-2.placeholder-glow
+                      .d-flex.w-100.justify-content-between.align-items-center.py-2.placeholder-glow.flex-wrap.flex-md-nowrap
                         span.placeholder.col-3.rounded-3(style='width: 120px; height: 100px;')
-                        .flex-grow-1.d-flex.flex-column.ms-3
+                        .flex-grow-1.d-flex.flex-column.ms-3.flex-wrap.flex-md-nowrap
                           span.col-10.placeholder.py-1.rounded-3
                           span.col-10.placeholder.rounded-3.py-1.my-2 deluxe room 19R
                           span.col-10.placeholder.rounded-3.py-1
-                        .d-flex.gap-3
+                        .d-flex.gap-3.mt-3.mt-lg-0
                           span.btn.placeholder(tabindex='-1') room details
                           span.btn.placeholder(tabindex='-1') make reservation
                     .list-group-item.border-0
-                      .d-flex.w-100.justify-content-between.align-items-center.py-2.placeholder-glow
+                      .d-flex.w-100.justify-content-between.align-items-center.py-2.placeholder-glow.flex-wrap.flex-md-nowrap
                         span.placeholder.col-3.rounded-3(style='width: 120px; height: 100px;')
-                        .flex-grow-1.d-flex.flex-column.ms-3
+                        .flex-grow-1.d-flex.flex-column.ms-3.flex-wrap.flex-md-nowrap
                           span.col-10.placeholder.py-1.rounded-3
                           span.col-10.placeholder.rounded-3.py-1.my-2 deluxe room 19R
                           span.col-10.placeholder.rounded-3.py-1
-                        .d-flex.gap-3
+                        .d-flex.gap-3.mt-3.mt-lg-0
                           span.btn.placeholder(tabindex='-1') room details
                           span.btn.placeholder(tabindex='-1') make reservation
                     .list-group-item.border-0
-                      .d-flex.w-100.justify-content-between.align-items-center.py-2.placeholder-glow
+                      .d-flex.w-100.justify-content-between.align-items-center.py-2.placeholder-glow.flex-wrap.flex-md-nowrap
                         span.placeholder.col-3.rounded-3(style='width: 120px; height: 100px;')
-                        .flex-grow-1.d-flex.flex-column.ms-3
+                        .flex-grow-1.d-flex.flex-column.ms-3.flex-wrap.flex-md-nowrap
                           span.col-10.placeholder.py-1.rounded-3
                           span.col-10.placeholder.rounded-3.py-1.my-2 deluxe room 19R
                           span.col-10.placeholder.rounded-3.py-1
-                        .d-flex.gap-3
+                        .d-flex.gap-3.mt-3.mt-lg-0
                           span.btn.placeholder(tabindex='-1') room details
                           span.btn.placeholder(tabindex='-1') make reservation
                     .list-group-item.border-0
-                      .d-flex.w-100.justify-content-between.align-items-center.py-2.placeholder-glow
+                      .d-flex.w-100.justify-content-between.align-items-center.py-2.placeholder-glow.flex-wrap.flex-md-nowrap
                         span.placeholder.col-3.rounded-3(style='width: 120px; height: 100px;')
-                        .flex-grow-1.d-flex.flex-column.ms-3
+                        .flex-grow-1.d-flex.flex-column.ms-3.flex-wrap.flex-md-nowrap
                           span.col-10.placeholder.py-1.rounded-3
                           span.col-10.placeholder.rounded-3.py-1.my-2 deluxe room 19R
                           span.col-10.placeholder.rounded-3.py-1
-                        .d-flex.gap-3
+                        .d-flex.gap-3.mt-3.mt-lg-0
+                          span.btn.placeholder(tabindex='-1') room details
+                          span.btn.placeholder(tabindex='-1') make reservation
+                    .list-group-item.border-0
+                      .d-flex.w-100.justify-content-between.align-items-center.py-2.placeholder-glow.flex-wrap.flex-md-nowrap
+                        span.placeholder.col-3.rounded-3(style='width: 120px; height: 100px;')
+                        .flex-grow-1.d-flex.flex-column.ms-3.flex-wrap.flex-md-nowrap
+                          span.col-10.placeholder.py-1.rounded-3
+                          span.col-10.placeholder.rounded-3.py-1.my-2 deluxe room 19R
+                          span.col-10.placeholder.rounded-3.py-1
+                        .d-flex.gap-3.mt-3.mt-lg-0
                           span.btn.placeholder(tabindex='-1') room details
                           span.btn.placeholder(tabindex='-1') make reservation
             #content-wrapper.card.border-0.d-none.shadow-sm
               .card-header.bg-transparent.border-0
                 h3.text-capitalize.my-1 available hotels & resorts
-                .d-flex.align-items-center.justify-content-between.mb-3
-                  p.mb-0 150+ hotels & resorts available
-                  .d-flex.align-items-center
+                .d-flex.align-items-center.justify-content-between.mb-3.flex-wrap
+                  p.mb-1.mb-lg-0 150+ hotels & resorts available
+                  .d-flex.align-items-center.justify-content-between.justify-content-lg-start
                     p.mb-0
                       i.las.la-sort-amount-down.fs-5.me-1
                       span.me-1 Sort by :
-                    .dropdown.ms-2
+                    .dropstart.ms-2
                       button.btn.btn-primary(type='button' data-bs-toggle='dropdown' aria-expanded='false')
                         | relevance
                         i.las.la-angle-down.ms-2
@@ -209,7 +253,7 @@ html(lang='en')
                           a.dropdown-item.text-capitalize(href='#') hotel name
                         li
                           a.dropdown-item.text-capitalize(href='#') room size
-                .d-flex.gap-3
+                .d-flex.gap-3.flex-wrap
                   button.btn.btn-primary(type='button') all rooms
                   button.btn.btn-outline-secondary(type='button') deluxe
                   button.btn.btn-outline-secondary(type='button') standard
@@ -220,13 +264,13 @@ html(lang='en')
               .card-body
                 .content-wrapper
                   .list-group.list-group-flush
-                    a.list-group-item.list-group-item-action.border-0(href='#')
-                      .d-flex.w-100.justify-content-between.align-items-center.py-2
+                    a.list-group-item.list-group-item-action.border-0.rounded-3(href='#')
+                      .d-flex.w-100.justify-content-between.align-items-center.py-2.flex-wrap.flex-md-nowrap
                         img.img-cover.rounded-3.me-3(src='img/hero-1.jpg' height='100' width='120')
-                        .flex-grow-1.d-flex.flex-column.align-items-stretch
-                          p.mb-0 $921/night
+                        .flex-grow-1.d-flex.flex-column.align-items-stretch.flex-wrap.flex-md-nowrap
+                          p.mb-0.mt-2.mt-lg-0 $921/night
                           h5.my-2.text-capitalize deluxe presidential suite 1A
-                          .d-flex.gap-2
+                          .d-flex.gap-2.mb-2.mb-lg-0.flex-wrap
                             p.text-muted.small.mb-0.text-capitalize
                               i.las.la-bed.me-1
                               span queen size
@@ -234,21 +278,18 @@ html(lang='en')
                               i.las.la-hot-tub.me-1
                               span jacuzzi
                             p.text-muted.small.mb-0.text-capitalize
-                              i.las.la-shower.me-1
-                              span shower
-                            p.text-muted.small.mb-0.text-capitalize
                               i.las.la-wine-glass.me-1
                               span mini-bar
                         .d-flex.gap-3
                           button.btn.btn-outline-secondary.text-capitalize room details
                           button.btn.btn-primary.text-capitalize make reservation
-                    a.list-group-item.list-group-item-action.border-0(href='#')
-                      .d-flex.w-100.justify-content-between.align-items-center.py-2
+                    a.list-group-item.list-group-item-action.border-0.rounded-3(href='#')
+                      .d-flex.w-100.justify-content-between.align-items-center.py-2.flex-wrap.flex-md-nowrap
                         img.img-cover.rounded-3.me-3(src='img/hero-2.jpg' height='100' width='120')
-                        .flex-grow-1.d-flex.flex-column.align-items-stretch
-                          p.mb-0 $241/night
+                        .flex-grow-1.d-flex.flex-column.align-items-stretch.flex-wrap.flex-md-nowrap
+                          p.mb-0.mt-2.mt-lg-0 $241/night
                           h5.my-2.text-capitalize deluxe twin rooms 18s
-                          .d-flex.gap-2
+                          .d-flex.gap-2.mb-2.mb-lg-0.flex-wrap.flex-md-nowrap
                             p.text-muted.small.mb-0.text-capitalize
                               i.las.la-bed.me-1
                               span double bed
@@ -261,13 +302,13 @@ html(lang='en')
                         .d-flex.gap-3
                           button.btn.btn-outline-secondary.text-capitalize room details
                           button.btn.btn-primary.text-capitalize make reservation
-                    a.list-group-item.list-group-item-action.border-0(href='#')
-                      .d-flex.w-100.justify-content-between.align-items-center.py-2
+                    a.list-group-item.list-group-item-action.border-0.rounded-3(href='#')
+                      .d-flex.w-100.justify-content-between.align-items-center.py-2.flex-wrap.flex-md-nowrap
                         img.img-cover.rounded-3.me-3(src='img/hero-3.jpg' height='100' width='120')
-                        .flex-grow-1.d-flex.flex-column.align-items-stretch
-                          p.mb-0 $100/night
+                        .flex-grow-1.d-flex.flex-column.align-items-stretch.flex-wrap.flex-md-nowrap
+                          p.mb-0.mt-2.mt-lg-0 $100/night
                           h5.my-2.text-capitalize deluxe single room 45G
-                          .d-flex.gap-2
+                          .d-flex.gap-2.mb-2.mb-lg-0.flex-wrap
                             p.text-muted.small.mb-0.text-capitalize
                               i.las.la-bed.me-1
                               span single bed
@@ -277,13 +318,13 @@ html(lang='en')
                         .d-flex.gap-3
                           button.btn.btn-outline-secondary.text-capitalize room details
                           button.btn.btn-primary.text-capitalize make reservation
-                    a.list-group-item.list-group-item-action.border-0(href='#')
-                      .d-flex.w-100.justify-content-between.align-items-center.py-2
+                    a.list-group-item.list-group-item-action.border-0.rounded-3(href='#')
+                      .d-flex.w-100.justify-content-between.align-items-center.py-2.flex-wrap.flex-md-nowrap
                         img.img-cover.rounded-3.me-3(src='img/hero-3.jpg' height='100' width='120')
-                        .flex-grow-1.d-flex.flex-column.align-items-stretch
-                          p.mb-0 $100/night
+                        .flex-grow-1.d-flex.flex-column.align-items-stretch.flex-wrap.flex-md-nowrap
+                          p.mb-0.mt-2.mt-lg-0 $100/night
                           h5.my-2.text-capitalize deluxe standard room 8Z
-                          .d-flex.gap-2
+                          .d-flex.gap-2.mb-2.mb-lg-0.flex-wrap
                             p.text-muted.small.mb-0.text-capitalize
                               i.las.la-bed.me-1
                               span queen size
@@ -293,13 +334,13 @@ html(lang='en')
                         .d-flex.gap-3
                           button.btn.btn-outline-secondary.text-capitalize room details
                           button.btn.btn-primary.text-capitalize make reservation
-                    a.list-group-item.list-group-item-action.border-0(href='#')
-                      .d-flex.w-100.justify-content-between.align-items-center.py-2
+                    a.list-group-item.list-group-item-action.border-0.rounded-3(href='#')
+                      .d-flex.w-100.justify-content-between.align-items-center.py-2.flex-wrap.flex-md-nowrap
                         img.img-cover.rounded-3.me-3(src='img/hero-3.jpg' height='100' width='120')
-                        .flex-grow-1.d-flex.flex-column.align-items-stretch
-                          p.mb-0 $100/night
+                        .flex-grow-1.d-flex.flex-column.align-items-stretch.flex-wrap.flex-md-nowrap
+                          p.mb-0.mt-2.mt-lg-0 $100/night
                           h5.my-2.text-capitalize deluxe room 19R
-                          .d-flex.gap-2
+                          .d-flex.gap-2.mb-2.mb-lg-0.flex-wrap
                             p.text-muted.small.mb-0.text-capitalize
                               i.las.la-bed.me-1
                               span queen size
