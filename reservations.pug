@@ -20,9 +20,9 @@ html(lang='en')
     link(rel='stylesheet' href='css/main.css')
   body
     header
-      nav.navbar.navbar-expand-lg.bg-white.shadow-sm
-        .container-fluid
-          a.navbar-brand(href='#').d-flex.align-items-center
+      nav.navbar.navbar-expand-lg.bg-white.shadow-sm.fixed-top
+        .container
+          a.navbar-brand(href='/').d-flex.align-items-center
             img(src='img/logo.svg' height='50' width='50').me-2
             span Hotels.com
           button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
@@ -68,8 +68,8 @@ html(lang='en')
                     a.dropdown-item.text-danger(href='#')
                       i.las.la-door-open
                       | Logout
-    main.mt-0.pt-3.bg-light
-      .container-fluid.px-4
+    main.pt-3.bg-light
+      .container-fluid.px-4.mt-4
         .row
           .col-3
             .card.border-0.shadow-sm
@@ -125,8 +125,8 @@ html(lang='en')
                 button.btn.btn-primary.w-100
                   i.las.la-search.me-2
                   span Search
-          .col-9
-            #loader-wrapper.card.border-0.placeholder-glow
+          .col-9.pb-3
+            #loader-wrapper.card.border-0.shadow-sm.placeholder-glow
               .card-header.bg-transparent.border-0
                 h3.text-capitalize.my-1 available hotels & resorts
                 .d-flex.align-items-center.justify-content-between.mb-3
@@ -189,7 +189,7 @@ html(lang='en')
                         .d-flex.gap-3
                           span.btn.placeholder(tabindex='-1') room details
                           span.btn.placeholder(tabindex='-1') make reservation
-            #content-wrapper.card.border-0.d-none
+            #content-wrapper.card.border-0.d-none.shadow-sm
               .card-header.bg-transparent.border-0
                 h3.text-capitalize.my-1 available hotels & resorts
                 .d-flex.align-items-center.justify-content-between.mb-3

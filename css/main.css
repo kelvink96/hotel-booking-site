@@ -128,6 +128,30 @@ nav.navbar .nav-link:not(.btn):hover, nav.navbar .nav-link:not(.btn):focus {
 main {
   margin-top: 50px;
 }
+main .hero-section {
+  background-size: cover;
+  background: url("../img/hero-5.jpg") no-repeat center;
+}
+main .features-section .card {
+  border: 2px solid transparent;
+}
+main .features-section .card:hover, main .features-section .card:focus {
+  transition: all ease-in-out 150ms;
+  cursor: pointer;
+  border: 2px solid #00968D !important;
+}
+main .recommended-section .card:hover, main .recommended-section .card:focus {
+  cursor: pointer;
+}
+main .recommended-section .card:hover *, main .recommended-section .card:focus * {
+  transition: all ease-in-out 150ms;
+}
+main .recommended-section .card:hover .card-title, main .recommended-section .card:focus .card-title {
+  font-weight: bold;
+}
+main .recommended-section .card:hover .card-img-top, main .recommended-section .card:focus .card-img-top {
+  transform: scale(1.02, 1.02);
+}
 
 footer .nav-link {
   text-transform: capitalize;

@@ -42,19 +42,22 @@ html(lang='en')
             ul.navbar-nav.ms-auto
               li.nav-item
                 a.btn.btn-primary(href='dashboard.html') sign in
-    main
-      .container.py-5
-        .hero-section.section.py-3
-          .row.align-items-center
-            .col-5
-              h1.mb-4 Find your best hotel for deals and much more...
-              .card.mb-3
-                .card-body
-                  .input-group.mb-3
-                    span.input-group-text.bg-transparent
-                      i.las.la-map-marker
-                    input.form-control(type='text' placeholder='where are you going?')
-                  .row.mb-3
+    main.mt-0
+      .container-fluid.py-5.px-0
+        .hero-section.section.py-xl-4.mb-xl-5.py-lg-4.mb-lg-0
+          .section-body.p-xl-5.my-xl-5.p-lg-3.my-lg-4
+            .card.col-xl-10.col-lg-12.mx-auto.shadow.border-0.mb-xl-5.mb-lg-0
+              .card-header.bg-transparent.border-0
+                h4.my-1 Find your best hotel for deals and much more...
+                p.mb-0 From cosy country homes to funky city flats
+              .card-body
+                .row
+                  .col-3
+                    .input-group
+                      span.input-group-text.bg-transparent
+                        i.las.la-map-marker
+                      input.form-control(type='text' placeholder='where are you going?')
+                  .row.col-4
                     .col-lg-6
                       .input-group
                         span.input-group-text.bg-transparent
@@ -75,7 +78,7 @@ html(lang='en')
                           option(value='2') Two
                           option(value='3') Three
                           option(value='3') Four
-                  .row.mb-3
+                  .row.col-5
                     .col-lg-4
                       .input-group
                         span.input-group-text.bg-transparent
@@ -87,205 +90,168 @@ html(lang='en')
                           i.las.la-calendar
                         input.form-control(type='text' placeholder='check out')
                     .col-lg-4
-                      button.btn.btn-primary
+                      a(href="reservations.html").btn.btn-primary
                         i.las.la-search.me-2
                         span search
-                .card-footer.bg-transparent.border-top-0.pb-3
-                  button.btn.btn-secondary
-                    i.las.la-angle-down.me-2
-                    span discover more
-              .card.text-decoration-none
-                .card-body
-                  .d-flex.align-items-center
-                    p.mb-0.card-text.rounded-3.text-warning.me-2
-                      i.las.la-exclamation-circle.la-2x
-                    p.card-text.text-black Get the advice you need. Check the latest COVID-19 restrictions before you travel.
-                      a(href='#').ms-1.text-primary.text-decoration-none Learn more
-            .col-7
-              .px-3
-                #hero-carousel.carousel.slide.carousel-fade(data-bs-ride='carousel')
-                  .carousel-indicators
-                    button.active(type='button' data-bs-target='#hero-carousel' data-bs-slide-to='0' aria-current='true' aria-label='Slide 1')
-                    button(type='button' data-bs-target='#hero-carousel' data-bs-slide-to='1' aria-label='Slide 2')
-                    button(type='button' data-bs-target='#hero-carousel' data-bs-slide-to='2' aria-label='Slide 3')
-                    button(type='button' data-bs-target='#hero-carousel' data-bs-slide-to='3' aria-label='Slide 4')
-                  .carousel-inner.rounded-3
-                    .carousel-item.active(data-bs-interval="10000")
-                      img.d-block.w-100(src='img/hero-1.jpg' alt='...' height='600')
-                      .carousel-caption.d-none.d-md-block
-                        h5 First slide label
-                        p Some representative placeholder content for the first slide.
-                    .carousel-item(data-bs-interval="10000")
-                      img.d-block.w-100(src='img/hero-2.jpg' alt='...' height='600')
-                      .carousel-caption.d-none.d-md-block
-                        h5 First slide label
-                        p Some representative placeholder content for the first slide.
-                    .carousel-item(data-bs-interval="10000")
-                      img.d-block.w-100(src='img/hero-3.jpg' alt='...' height='600')
-                      .carousel-caption.d-none.d-md-block
-                        h5 First slide label
-                        p Some representative placeholder content for the first slide.
-                    .carousel-item(data-bs-interval="10000")
-                      img.d-block.w-100(src='img/hero-4.jpg' alt='...' height='600')
-                      .carousel-caption.d-none.d-md-block
-                        h5 First slide label
-                        p Some representative placeholder content for the first slide.
-                  button.carousel-control-prev(type='button' data-bs-target='#hero-carousel' data-bs-slide='prev')
-                    span.carousel-control-prev-icon(aria-hidden='true')
-                    span.visually-hidden Previous
-                  button.carousel-control-next(type='button' data-bs-target='#hero-carousel' data-bs-slide='next')
-                    span.carousel-control-next-icon(aria-hidden='true')
-                    span.visually-hidden Next
-        .section.py-4
-          .section-title.text-center.py-3
-            h3.text-capitalize.fw-bold facilities and services
-            p Facilities and services offered across out hotel and resorts
-          .section-body
-            .row.row-cols-1.row-cols-md-4.g-4
-              .col
-                .card.h-100.border-0.text-center.shadow-sm
-                  img.card-img-top(src='img/workspace-icon.png' alt='...' height='50').img-contain.my-3
-                  .card-body
-                    h5.card-title Private Workspace
-                    p.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              .col
-                .card.h-100.border-0.text-center.shadow-sm
-                  img.card-img-top(src='img/spa-icon.png' alt='...' height='50').img-contain.my-3
-                  .card-body
-                    h5.card-title Spa
-                    p.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              .col
-                .card.h-100.border-0.text-center.shadow-sm
-                  img.card-img-top(src='img/bar-icon.png' alt='...' height='50').img-contain.my-3
-                  .card-body
-                    h5.card-title Lounge & Bar
-                    p.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              .col
-                .card.h-100.border-0.text-center.shadow-sm
-                  img.card-img-top(src='img/wifi-icon.png' alt='...' height='50').img-contain.my-3
-                  .card-body
-                    h5.card-title WiFi Access
-                    p.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        .section.py-4
-          .section-title.text-center.py-3
-            h3.text-capitalize.fw-bold popular hotels & resorts
-            p Explore our highly rated top hotels and resorts
-          .section-body
-            .row.row-cols-1.row-cols-md-4.g-4
-              .col
-                .card.h-100.border-0
-                  img.card-img-top(src='img/hero-1.jpg' alt='...' height='200').img-cover.rounded-3.shadow-sm
-                  .card-body
-                    h5.card-title.mb-0 Encuentro Guadalupe
-                    small Mexico
-                    .d-flex.justify-content-between.align-items-center
-                      p.card-text.mb-0
-                        span.text-primary.fw-bold $ 301.31
-                        span  / night
-                      p.card-text
-                        i.las.la-star.me-1.text-secondary
-                        | 4.9
-              .col
-                .card.h-100.border-0
-                  img.card-img-top(src='img/hero-2.jpg' alt='...' height='200').img-cover.rounded-3.shadow-sm
-                  .card-body
-                    h5.card-title.mb-0 Ibiza
-                    small Meditrranean Sea
-                    .d-flex.justify-content-between.align-items-center
-                      p.card-text.mb-0
-                        span.text-primary.fw-bold $ 301.31
-                        span  / night
-                      p.card-text
-                        i.las.la-star.me-1.text-secondary
-                        | 4.9
-              .col
-                .card.h-100.border-0
-                  img.card-img-top(src='img/hero-3.jpg' alt='...' height='200').img-cover.rounded-3.shadow-sm
-                  .card-body
-                    h5.card-title.mb-0 Bali
-                    small Indonesia
-                    .d-flex.justify-content-between.align-items-center
-                      p.card-text.mb-0
-                        span.text-primary.fw-bold $ 301.31
-                        span  / night
-                      p.card-text
-                        i.las.la-star.me-1.text-secondary
-                        | 4.9
-              .col
-                .card.h-100.border-0
-                  img.card-img-top(src='img/hero-4.jpg' alt='...' height='200').img-cover.rounded-3.shadow-sm
-                  .card-body
-                    h5.card-title.mb-0 Gili Air
-                    small Indonesia
-                    .d-flex.justify-content-between.align-items-center
-                      p.card-text.mb-0
-                        span.text-primary.fw-bold $ 301.31
-                        span  / night
-                      p.card-text
-                        i.las.la-star.me-1.text-secondary
-                        | 4.9
-              .col
-                .card.h-100.border-0
-                  img.card-img-top(src='img/hero-5.jpg' alt='...' height='200').img-cover.rounded-3.shadow-sm
-                  .card-body
-                    h5.card-title.mb-0 Kapoon
-                    small Maldives
-                    .d-flex.justify-content-between.align-items-center
-                      p.card-text.mb-0
-                        span.text-primary.fw-bold $ 301.31
-                        span  / night
-                      p.card-text
-                        i.las.la-star.me-1.text-secondary
-                        | 4.9
-              .col
-                .card.h-100.border-0
-                  img.card-img-top(src='img/hero-6.jpg' alt='...' height='200').img-cover.rounded-3.shadow-sm
-                  .card-body
-                    h5.card-title.mb-0 Majestic Elegance
-                    small Dominican Republic
-                    .d-flex.justify-content-between.align-items-center
-                      p.card-text.mb-0
-                        span.text-primary.fw-bold $ 301.31
-                        span  / night
-                      p.card-text
-                        i.las.la-star.me-1.text-secondary
-                        | 4.9
-              .col
-                .card.h-100.border-0
-                  img.card-img-top(src='img/hero-7.jpg' alt='...' height='200').img-cover.rounded-3.shadow-sm
-                  .card-body
-                    h5.card-title.mb-0 El Fenn
-                    small Morocco
-                    .d-flex.justify-content-between.align-items-center
-                      p.card-text.mb-0
-                        span.text-primary.fw-bold $ 301.31
-                        span  / night
-                      p.card-text
-                        i.las.la-star.me-1.text-secondary
-                        | 4.9
-              .col
-                .card.h-100.border-0
-                  img.card-img-top(src='img/hero-8.jpg' alt='...' height='200').img-cover.rounded-3.shadow-sm
-                  .card-body
-                    h5.card-title.mb-0 Chinmaye Inn
-                    small India
-                    .d-flex.justify-content-between.align-items-center
-                      p.card-text.mb-0
-                        span.text-primary.fw-bold $ 301.31
-                        span  / night
-                      p.card-text
-                        i.las.la-star.me-1.text-secondary
-                        | 4.9
-        .section.py-4
-          .card.bg-light
-            .card-body
-              h5.card-title Subscribe to our newsletters to get latest updates and offers
-              p.card-text Prices drop the moment you sign up!
-              .d-flex
-                .col-3.me-2
-                  input.form-control(type='text' placeholder="enter your email")
-                div
-                  button.btn.btn-primary(type='button') sign me up
+        .container
+          .section.mb-3
+            .card.text-decoration-none
+              .card-body
+                .d-flex.align-items-center
+                  p.mb-0.card-text.rounded-3.text-warning.me-2
+                    i.las.la-exclamation-circle.la-2x
+                  p.card-text.text-black Get the advice you need. Check the latest COVID-19 restrictions before you travel.
+                    a(href='https://www.who.int/emergencies/diseases/novel-coronavirus-2019' target="_blank").ms-1.text-primary Learn more
+          .features-section.section.py-4.mb-4
+            .section-title.text-center.py-3
+              h3.text-capitalize.fw-bold facilities and services
+              p Facilities and services offered across out hotel and resorts
+            .section-body
+              .row.row-cols-1.row-cols-md-4.g-4
+                .col
+                  .card.h-100.text-center.shadow-sm
+                    img.card-img-top(src='img/workspace-icon.png' alt='...' height='50').img-contain.my-3
+                    .card-body
+                      h5.card-title Private Workspace
+                      p.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                .col
+                  .card.h-100.text-center.shadow-sm
+                    img.card-img-top(src='img/spa-icon.png' alt='...' height='50').img-contain.my-3
+                    .card-body
+                      h5.card-title Spa
+                      p.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                .col
+                  .card.h-100.text-center.shadow-sm
+                    img.card-img-top(src='img/bar-icon.png' alt='...' height='50').img-contain.my-3
+                    .card-body
+                      h5.card-title Lounge & Bar
+                      p.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                .col
+                  .card.h-100.text-center.shadow-sm
+                    img.card-img-top(src='img/wifi-icon.png' alt='...' height='50').img-contain.my-3
+                    .card-body
+                      h5.card-title WiFi Access
+                      p.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          .recommended-section.section.py-4
+            .section-title.text-center.py-3
+              h3.text-capitalize.fw-bold popular hotels & resorts
+              p Explore our highly rated top hotels and resorts
+            .section-body
+              .row.row-cols-1.row-cols-md-4.g-4
+                .col
+                  .card.h-100.border-0
+                    img.card-img-top(src='img/hero-1.jpg' alt='...' height='200').img-cover.rounded-3.shadow-sm
+                    .card-body
+                      h5.card-title.mb-0 Encuentro Guadalupe
+                      small Mexico
+                      .d-flex.justify-content-between.align-items-center
+                        p.card-text.mb-0
+                          span.text-primary.fw-bold $ 301.31
+                          span  / night
+                        p.card-text
+                          i.las.la-star.me-1.text-secondary
+                          | 4.9
+                .col
+                  .card.h-100.border-0
+                    img.card-img-top(src='img/hero-2.jpg' alt='...' height='200').img-cover.rounded-3.shadow-sm
+                    .card-body
+                      h5.card-title.mb-0 Ibiza
+                      small Meditrranean Sea
+                      .d-flex.justify-content-between.align-items-center
+                        p.card-text.mb-0
+                          span.text-primary.fw-bold $ 301.31
+                          span  / night
+                        p.card-text
+                          i.las.la-star.me-1.text-secondary
+                          | 4.9
+                .col
+                  .card.h-100.border-0
+                    img.card-img-top(src='img/hero-3.jpg' alt='...' height='200').img-cover.rounded-3.shadow-sm
+                    .card-body
+                      h5.card-title.mb-0 Bali
+                      small Indonesia
+                      .d-flex.justify-content-between.align-items-center
+                        p.card-text.mb-0
+                          span.text-primary.fw-bold $ 301.31
+                          span  / night
+                        p.card-text
+                          i.las.la-star.me-1.text-secondary
+                          | 4.9
+                .col
+                  .card.h-100.border-0
+                    img.card-img-top(src='img/hero-4.jpg' alt='...' height='200').img-cover.rounded-3.shadow-sm
+                    .card-body
+                      h5.card-title.mb-0 Gili Air
+                      small Indonesia
+                      .d-flex.justify-content-between.align-items-center
+                        p.card-text.mb-0
+                          span.text-primary.fw-bold $ 301.31
+                          span  / night
+                        p.card-text
+                          i.las.la-star.me-1.text-secondary
+                          | 4.9
+                .col
+                  .card.h-100.border-0
+                    img.card-img-top(src='img/hero-5.jpg' alt='...' height='200').img-cover.rounded-3.shadow-sm
+                    .card-body
+                      h5.card-title.mb-0 Kapoon
+                      small Maldives
+                      .d-flex.justify-content-between.align-items-center
+                        p.card-text.mb-0
+                          span.text-primary.fw-bold $ 301.31
+                          span  / night
+                        p.card-text
+                          i.las.la-star.me-1.text-secondary
+                          | 4.9
+                .col
+                  .card.h-100.border-0
+                    img.card-img-top(src='img/hero-6.jpg' alt='...' height='200').img-cover.rounded-3.shadow-sm
+                    .card-body
+                      h5.card-title.mb-0 Majestic Elegance
+                      small Dominican Republic
+                      .d-flex.justify-content-between.align-items-center
+                        p.card-text.mb-0
+                          span.text-primary.fw-bold $ 301.31
+                          span  / night
+                        p.card-text
+                          i.las.la-star.me-1.text-secondary
+                          | 4.9
+                .col
+                  .card.h-100.border-0
+                    img.card-img-top(src='img/hero-7.jpg' alt='...' height='200').img-cover.rounded-3.shadow-sm
+                    .card-body
+                      h5.card-title.mb-0 El Fenn
+                      small Morocco
+                      .d-flex.justify-content-between.align-items-center
+                        p.card-text.mb-0
+                          span.text-primary.fw-bold $ 301.31
+                          span  / night
+                        p.card-text
+                          i.las.la-star.me-1.text-secondary
+                          | 4.9
+                .col
+                  .card.h-100.border-0
+                    img.card-img-top(src='img/hero-8.jpg' alt='...' height='200').img-cover.rounded-3.shadow-sm
+                    .card-body
+                      h5.card-title.mb-0 Chinmaye Inn
+                      small India
+                      .d-flex.justify-content-between.align-items-center
+                        p.card-text.mb-0
+                          span.text-primary.fw-bold $ 301.31
+                          span  / night
+                        p.card-text
+                          i.las.la-star.me-1.text-secondary
+                          | 4.9
+          .section.py-4
+            .card.bg-light
+              .card-body
+                h4.card-title Subscribe to our newsletters to get latest updates and offers
+                p.card-text Prices drop the moment you sign up!
+                .d-flex
+                  .col-4.me-2
+                    input.form-control(type='text' placeholder="enter your email")
+                  div
+                    button.btn.btn-primary(type='button') sign me up
     footer.bg-light
       .py-4
         .container
@@ -400,5 +366,3 @@ html(lang='en')
             a(href='').btn.btn-secondary
               i.lab.la-twitch.me-2
               span twitch
-
-

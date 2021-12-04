@@ -37,6 +37,35 @@ nav.navbar
 main
   margin-top: 50px
 
+  .hero-section
+    background-size: cover
+    background: url("../img/hero-5.jpg") no-repeat center
+
+  .features-section
+    .card
+      border: 2px solid transparent
+
+      &:hover,
+      &:focus
+        @include transition
+        cursor: pointer
+        border: 2px solid $color-cyan !important
+
+  .recommended-section
+    .card
+      &:hover,
+      &:focus
+        cursor: pointer
+
+        *
+          @include transition
+
+        .card-title
+          font-weight: bold
+
+        .card-img-top
+          transform: scale(1.02, 1.02)
+
 footer
   .nav-link
     text-transform: capitalize
