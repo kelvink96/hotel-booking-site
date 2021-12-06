@@ -4,11 +4,6 @@
 /* Color Theme Swatches in Hex */
 /* Color Theme Swatches in RGBA */
 /* Color Theme Swatches in HSLA */
-html, body, nav {
-  position: absolute;
-  width: 100vw;
-}
-
 .img-contain {
   object-fit: contain;
 }
@@ -47,7 +42,7 @@ input.form-control:focus,
   color: #EEA737 !important;
 }
 
-.bg-primary {
+.bg-primary, .list-group .active {
   background-color: #00968D !important;
 }
 
@@ -165,6 +160,15 @@ footer .nav-link {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+  html, body, nav {
+    position: absolute;
+    width: 100vw;
+  }
+
+  aside.sidenav {
+    width: 0;
+  }
+
   nav.navbar-brand {
     position: relative !important;
   }

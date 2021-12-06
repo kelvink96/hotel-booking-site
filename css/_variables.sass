@@ -1,9 +1,5 @@
 @import "colors"
 
-html, body, nav
-  position: absolute
-  width: 100vw
-
 .img-contain
   object-fit: contain
 
@@ -88,3 +84,7 @@ input.form-control:focus,
       border-bottom: 1.5px solid $color-cyan
       font-weight: bold
       background-color: transparent
+
+.list-group
+  .active
+    @extend .bg-primary
