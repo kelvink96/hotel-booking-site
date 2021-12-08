@@ -8,6 +8,10 @@ html(lang='en')
     script(src='vendors/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js')
     // jQuery
     script(src='vendors/jquery-3.6.0/jquery-3.6.0.min.js')
+    // introJs
+    script(src='vendors/intro.js-4.3.0/intro.min.js')
+    link(rel='stylesheet' href='vendors/intro.js-4.3.0/intro.min.css')
+    //
     script(src='js/main.js')
     // Fonts
     link(rel='preconnect' href='https://fonts.googleapis.com')
@@ -42,8 +46,8 @@ html(lang='en')
                 a.nav-link.rounded-3(href='#') contact
             ul.navbar-nav.ms-auto
               li.nav-item
-                a.btn.btn-primary(href='dashboard.html') sign in
-    main.mt-4.mt-lg-0
+                a.btn.btn-primary(href='dashboard.html' data-title="Getting started!" data-intro="View dashboard") sign in
+    main.mt-5.mt-lg-0
       .container-fluid.py-lg-5.px-0.py-4
         .hero-section.section.py-xl-4.mb-xl-5.py-lg-4.mb-lg-4.mb-3
           .section-body.p-xl-5.my-xl-5.p-lg-3.my-lg-4.py-3
@@ -91,7 +95,7 @@ html(lang='en')
                           i.las.la-calendar
                         input.form-control(type='text' placeholder='check out')
                     .col-6.col-lg-4
-                      a(href="reservations.html").btn.btn-primary
+                      a(href="reservations.html" data-title="Getting started!" data-intro="Place a search request").btn.btn-primary
                         i.las.la-search.me-2
                         span search
         .container
@@ -102,7 +106,7 @@ html(lang='en')
                   p.mb-0.card-text.rounded-3.text-warning.me-2
                     i.las.la-exclamation-circle.la-2x
                   p.card-text.text-black Get the advice you need. Check the latest COVID-19 restrictions before you travel.
-                    a(href='https://www.who.int/emergencies/diseases/novel-coronavirus-2019' target="_blank").ms-1.text-primary Learn more
+                    a(href='https://www.who.int/emergencies/diseases/novel-coronavirus-2019' target="_blank" data-title="Getting started!" data-intro="View COVID-19 information").ms-1.text-primary Learn more
           .features-section.section.py-4.mb-4
             .section-title.text-center.py-3
               h3.text-capitalize.fw-bold facilities and services
@@ -252,7 +256,7 @@ html(lang='en')
                   .col-6.col-lg-4.me-2
                     input.form-control(type='text' placeholder="enter your email")
                   div
-                    button.btn.btn-primary(type='button') sign me up
+                    button.btn.btn-primary(type='button' data-title="Getting started!" data-intro="Get latest updates via email") sign me up
     footer.bg-light
       .py-4
         .container
@@ -348,22 +352,22 @@ html(lang='en')
                         | japanese yen
         .container
           hr
-          .d-flex.text-capitalize.justify-content-evenly
+          .d-flex.text-capitalize.justify-content-evenly(data-title="Getting started!" data-intro="Our social media pages")
             a(href='').btn.btn-secondary
               i.lab.la-facebook.me-0.me-lg-2
-              span.d-none.d-lg-block facebook
+              span.d-none.d-lg-inline-block facebook
             a(href='').btn.btn-secondary
               i.lab.la-twitter.me-0.me-lg-2
-              span.d-none.d-lg-block twitter
+              span.d-none.d-lg-inline-block twitter
             a(href='').btn.btn-secondary
               i.lab.la-instagram.me-0.me-lg-2
-              span.d-none.d-lg-block instagram
+              span.d-none.d-lg-inline-block instagram
             a(href='').btn.btn-secondary
               i.lab.la-youtube.me-0.me-lg-2
-              span.d-none.d-lg-block youtube
+              span.d-none.d-lg-inline-block youtube
             a(href='').btn.btn-secondary
               i.lab.la-linkedin.me-0.me-lg-2
-              span.d-none.d-lg-block linkedIn
+              span.d-none.d-lg-inline-block linkedIn
             a(href='').btn.btn-secondary
               i.lab.la-twitch.me-0.me-lg-2
-              span.d-none.d-lg-block twitch
+              span.d-none.d-lg-inline-block twitch
