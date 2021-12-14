@@ -1,7 +1,7 @@
 doctype html
 html(lang='en')
   head
-    title hotels.com
+    title Hotels.com | Dashboard
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     // Local Files
     link(rel='stylesheet' href='vendors/bootstrap-5.1.3-dist/css/bootstrap.min.css')
@@ -12,6 +12,9 @@ html(lang='en')
     script(src='vendors/chart.js-3.5.0/chart.min.js')
     script(src='js/main.js')
     script(src='js/dashboard.js')
+    // introJs
+    script(src='vendors/intro.js-4.3.0/intro.min.js')
+    link(rel='stylesheet' href='vendors/intro.js-4.3.0/intro.min.css')
     // Fonts
     link(rel='preconnect' href='https://fonts.googleapis.com')
     link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
@@ -27,7 +30,7 @@ html(lang='en')
         .p-0
           .brand-name.text-center.mt-3.mb-2
             .d-flex.justify-content-center.align-items-center
-              img.me-1(src='img/logo.png' alt='' height='50')
+              img.me-1(src='img/logo.svg' alt='logo' height='50')
           .list-group.list-group-flush
             a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.text-capitalize.py-3.bg-transparent.text-white.active(href='dashboard.html')
               i.las.la-columns.la-2x
@@ -35,7 +38,7 @@ html(lang='en')
             a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.text-capitalize.py-3.bg-transparent.text-white(href='rooms.html')
               i.las.la-key.la-2x
               span rooms
-            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.text-capitalize.py-3.bg-transparent.text-white(href='bookings.html')
+            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.text-capitalize.py-3.bg-transparent.text-white(href='404.html')
               i.las.la-calendar-check.la-2x
               span bookings
             a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.text-capitalize.py-3.bg-transparent.text-white(href='guests.html')
@@ -44,7 +47,7 @@ html(lang='en')
             a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.text-capitalize.py-3.bg-transparent.text-white(href='concierge.html')
               i.las.la-user-tie.la-2x
               span concierge
-            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.text-capitalize.py-3.bg-transparent.text-white(href='')
+            a.list-group-item.list-group-item-action.d-flex.flex-column.align-items-center.text-capitalize.py-3.bg-transparent.text-white(href='404.html')
               i.las.la-cog.la-2x
               span settings
       .container-fluid.px-0.bg-light
@@ -57,16 +60,12 @@ html(lang='en')
               .d-flex.d-lg-none.align-items-center.justify-content-evenly.ms-auto
                 .nav-item
                   a.nav-link.fs-5.py-0.px-2.position-relative(href='#')
-                    i.las.la-search
-                .nav-item
-                  a.nav-link.fs-5.py-0.px-2.position-relative(href='#')
                     i.las.la-bell
-                .nav-item
+                .nav-item.me-2
                   a.nav-link.fs-5.py-0.px-2.position-relative(href='#')
                     i.las.la-envelope
-                button.btn(type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasNavbar' aria-controls='offcanvasNavbar')
-                  .d-flex.align-items-center.gap-2
-                    img.img-cover.rounded-circle.border(src='img/icons8_account_120px.png' width='40' height='40')
+                button.btn.btn-primary(type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasNavbar' aria-controls='offcanvasNavbar')
+                  i.las.la-bars
                 #offcanvasNavbar.offcanvas.offcanvas-start(tabindex='-1' aria-labelledby='offcanvasNavbarLabel')
                   .offcanvas-header
                     .d-flex.align-items-center
@@ -75,7 +74,7 @@ html(lang='en')
                     button.btn-close.text-reset(type='button' data-bs-dismiss='offcanvas' aria-label='Close')
                   .offcanvas-body.py-0
                     .brand-name.text-start.mb-3.p-2.border.rounded-3.d-flex.align-items-center
-                      i.las.la-user-circle.me-1
+                      img.img-cover.rounded-circle.border.me-2(src='img/icons8_account_120px.png' width='40' height='40')
                       span.text-capitalize john doe
                       span.small.mb-0.badge.bg-primary.ms-2.text-capitalize guest
                     .list-group.list-group-flush.bg-primary
@@ -85,7 +84,7 @@ html(lang='en')
                       a.list-group-item.list-group-item-action.text-capitalize(href='rooms.html')
                         i.las.la-key.me-2
                         span rooms
-                      a.list-group-item.list-group-item-action.text-capitalize(href='bookings.html')
+                      a.list-group-item.list-group-item-action.text-capitalize(href='404.html')
                         i.las.la-calendar-check.me-2
                         span bookings
                       a.list-group-item.list-group-item-action.text-capitalize(href='guests.html')
@@ -94,10 +93,10 @@ html(lang='en')
                       a.list-group-item.list-group-item-action.text-capitalize(href='concierge.html')
                         i.las.la-user-tie.me-2
                         span concierge
-                      a.list-group-item.list-group-item-action.text-capitalize(href='')
+                      a.list-group-item.list-group-item-action.text-capitalize(href='404.html')
                         i.las.la-cog.me-2
                         span settings
-                      a.list-group-item.list-group-item-action.text-capitalize(href='')
+                      a.list-group-item.list-group-item-action.text-capitalize(href='404.html')
                         i.las.la-question-circle.me-2
                         | Support
                       a.list-group-item.list-group-item-action.text-capitalize.text-danger(href='')
@@ -119,7 +118,7 @@ html(lang='en')
                       i.las.la-envelope
                       small.position-absolute.top-0.start-100.translate-middle.p-1.bg-secondary.border.border-light.rounded-circle
                   .dropdown
-                    button.btn#account-dropdown(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                    button.btn#account-dropdown(type='button' data-bs-toggle='dropdown' aria-expanded='false' data-title="Get started!" data-intro="Access user's menu list!")
                       .d-flex.align-items-center.gap-2
                         img.img-cover.rounded-circle.border(src='img/icons8_account_120px.png' width='40' height='40')
                         .text-start
