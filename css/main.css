@@ -20,6 +20,10 @@ body {
   font-family: "Source Sans Pro", sans-serif;
 }
 
+.h-100-vh {
+  height: 100vh;
+}
+
 .ml-n-40 {
   margin-left: -40px !important;
 }
@@ -42,7 +46,7 @@ input.form-control:focus,
   color: #EEA737 !important;
 }
 
-.bg-primary {
+.bg-primary, .list-group .active {
   background-color: #00968D !important;
 }
 
@@ -128,10 +132,85 @@ nav.navbar .nav-link:not(.btn):hover, nav.navbar .nav-link:not(.btn):focus {
 main {
   margin-top: 50px;
 }
+main .hero-section {
+  background-size: cover;
+  background: url("../img/hero-5.jpg") no-repeat center;
+}
+main .features-section .card {
+  border: 2px solid transparent;
+}
+main .features-section .card:hover, main .features-section .card:focus {
+  transition: all ease-in-out 150ms;
+  cursor: pointer;
+  border: 2px solid #00968D !important;
+}
+main .recommended-section .card:hover, main .recommended-section .card:focus {
+  cursor: pointer;
+}
+main .recommended-section .card:hover *, main .recommended-section .card:focus * {
+  transition: all ease-in-out 150ms;
+}
+main .recommended-section .card:hover .card-title, main .recommended-section .card:focus .card-title {
+  font-weight: bold;
+}
+main .recommended-section .card:hover .card-img-top, main .recommended-section .card:focus .card-img-top {
+  transform: scale(1.02, 1.02);
+}
 
 footer .nav-link {
   text-transform: capitalize;
   margin: 0 0.1rem;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  html, body, nav {
+    position: absolute;
+    width: 100vw;
+  }
+
+  main {
+    margin-bottom: 1rem;
+  }
+
+  aside.sidenav {
+    width: 0;
+  }
+
+  nav.navbar-brand {
+    position: relative !important;
+  }
+
+  .hero-section {
+    background: white !important;
+  }
+  .hero-section .card {
+    box-shadow: none !important;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .example {
+    background: green;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .example {
+    background: blue;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .example {
+    background: orange;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .example {
+    background: pink;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -50,8 +50,8 @@ html(lang='en')
     link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css')
     link(rel='stylesheet' href='css/main.css')
   body
-    .d-flex.h-100
-      aside.sidenav.bg-primary
+    .d-block.d-md-flex.h-100
+      aside.d-none.d-md-block.sidenav.bg-primary
         .p-0
           .brand-name.text-center.mt-3.mb-2
             .d-flex.justify-content-center.align-items-center
@@ -82,8 +82,55 @@ html(lang='en')
               a.navbar-brand(href='#').d-flex.align-items-center
                 i.las.la-key.la-2x.me-2
                 span Rooms
-              button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-                span.navbar-toggler-icon
+              .d-flex.d-lg-none.align-items-center.justify-content-evenly.ms-auto
+                .nav-item
+                  a.nav-link.fs-5.py-0.px-2.position-relative(href='#')
+                    i.las.la-search
+                .nav-item
+                  a.nav-link.fs-5.py-0.px-2.position-relative(href='#')
+                    i.las.la-bell
+                .nav-item
+                  a.nav-link.fs-5.py-0.px-2.position-relative(href='#')
+                    i.las.la-envelope
+                button.btn(type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasNavbar' aria-controls='offcanvasNavbar')
+                  .d-flex.align-items-center.gap-2
+                    img.img-cover.rounded-circle.border(src='img/icons8_account_120px.png' width='40' height='40')
+                #offcanvasNavbar.offcanvas.offcanvas-start(tabindex='-1' aria-labelledby='offcanvasNavbarLabel')
+                  .offcanvas-header
+                    .d-flex.align-items-center
+                      img.me-2(src='img/logo.svg' alt='' height='30')
+                      h5#offcanvasNavbarLabel.offcanvas-title.text-primary Hotels.com
+                    button.btn-close.text-reset(type='button' data-bs-dismiss='offcanvas' aria-label='Close')
+                  .offcanvas-body.py-0
+                    .brand-name.text-start.mb-3.p-2.border.rounded-3.d-flex.align-items-center
+                      i.las.la-user-circle.me-1
+                      span.text-capitalize john doe
+                      span.small.mb-0.badge.bg-primary.ms-2.text-capitalize guest
+                    .list-group.list-group-flush.bg-primary
+                      a.list-group-item.list-group-item-action.text-capitalize(href='dashboard.html')
+                        i.las.la-columns.me-2
+                        span dashboard
+                      a.list-group-item.list-group-item-action.text-capitalize.active(href='rooms.html')
+                        i.las.la-key.me-2
+                        span rooms
+                      a.list-group-item.list-group-item-action.text-capitalize(href='bookings.html')
+                        i.las.la-calendar-check.me-2
+                        span bookings
+                      a.list-group-item.list-group-item-action.text-capitalize(href='guests.html')
+                        i.las.la-user-alt.me-2
+                        span guests
+                      a.list-group-item.list-group-item-action.text-capitalize(href='concierge.html')
+                        i.las.la-user-tie.me-2
+                        span concierge
+                      a.list-group-item.list-group-item-action.text-capitalize(href='')
+                        i.las.la-cog.me-2
+                        span settings
+                      a.list-group-item.list-group-item-action.text-capitalize(href='')
+                        i.las.la-question-circle.me-2
+                        | Support
+                      a.list-group-item.list-group-item-action.text-capitalize.text-danger(href='')
+                        i.las.la-door-open.me-2
+                        | Logout
               #navbarSupportedContent.collapse.navbar-collapse
                 form.ms-auto.d-flex.w-50
                   .input-group
